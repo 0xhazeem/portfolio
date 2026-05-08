@@ -1,13 +1,11 @@
-/* High Contrast Theme Variables */
 :root {
-    --bg-color: #050505; /* أسود قاتم */
-    --text-color: #ffffff; /* أبيض ناصع */
+    --bg-color: #050505; 
+    --text-color: #ffffff;
     --border-color: #333333;
     --accent-color: #ffffff;
     --card-bg: #0a0a0a;
 }
 
-/* Light Mode (Inverse High Contrast) */
 [data-theme="light"] {
     --bg-color: #ffffff;
     --text-color: #000000;
@@ -20,7 +18,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* خط الكود الأساسي */
     font-family: 'Courier New', Courier, monospace; 
 }
 
@@ -28,14 +25,12 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: 0.3s;
-    /* تأثير الشبكة (Grid) في الخلفية */
     background-image: 
         linear-gradient(rgba(128, 128, 128, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
     background-size: 30px 30px;
 }
 
-/* Header & Nav */
 header {
     background: var(--bg-color);
     border-bottom: 2px solid var(--border-color);
@@ -58,18 +53,15 @@ nav {
 .nav-links a:hover { text-shadow: 0 0 8px var(--accent-color); }
 .theme-btn { background: transparent; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-color); }
 
-/* Sections */
-/* تقليل المساحات الفاضية بين الأقسام */
 .section {
-    padding: 80px 20px 40px; /* قللنا الـ padding اللي فوق واللي تحت */
-    min-height: auto; /* لغينا الـ 100vh عشان الأقسام تقرب من بعض */
+    padding: 80px 20px 40px;
+    min-height: auto; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .section-title { margin-bottom: 50px; font-size: 2.5rem; text-transform: uppercase; border-bottom: 2px solid var(--text-color); display: inline-block; padding-bottom: 5px; }
 
-/* Terminal Window (Hero) */
 .terminal-box {
     width: 100%;
     max-width: 800px;
@@ -87,7 +79,6 @@ nav {
     align-items: center;
 }
 .terminal-buttons { display: flex; gap: 8px; margin-right: 15px; }
-/* مؤشر الماوس عشان الزرار الأحمر يبان إنه شغال */
 .close {
     cursor: pointer;
     transition: transform 0.2s;
@@ -115,17 +106,15 @@ nav {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 30px; /* المقدار ده هيبعدهم عن بعض، تقدر تخليه 20px لو عايزهم أقرب شوية */
+    gap: 30px; 
 }
 
-/* وتأكد إن الأيقونات نفسها متنسقة كده */
 .social-links a {
     color: var(--text-color);
     font-size: 3rem;
     transition: 0.3s;
 }
 .social-links a:hover { text-shadow: 0 0 15px var(--accent-color); transform: scale(1.1); }
-/* تأثير إضاءة حمراء لأيقونة اليوتيوب عند الوقوف عليها */
 .yt-link:hover {
     color: #ff0000 !important;
     text-shadow: 0 0 15px rgba(255, 0, 0, 0.8) !important;
@@ -163,89 +152,73 @@ footer { padding: 20px; text-align: center; border-top: 2px solid var(--border-c
 .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
 .fade-in.appear { opacity: 1; transform: translateY(0); }
 
-/* ==========================================
-   تنسيق الـ Hero الجديد (العمودين)
-   ========================================== */
 
-/* الحاوية الأساسية للقسم */
 .hero-wrapper {
-    max-width: 1200px; /* عرض أكبر عشان العمودين */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* حاوية العمودين (Terminal + Photo) */
 .hero-container {
     display: flex;
-    flex-direction: row; /* عمودين جمب بعض في الشاشات الكبيرة */
+    flex-direction: row; 
     justify-content: center;
     align-items: center;
-    gap: 50px; /* مسافة بين الـ Terminal والصورة */
+    gap: 50px;
     width: 100%;
     padding: 0 20px;
-    flex-wrap: wrap-reverse; /* على الموبايل: الصورة تطلع فوق والـ Terminal تحت */
+    flex-wrap: wrap-reverse; 
 }
 
-/* تعديل الـ terminal-box عشان يظبط في العمود */
 .terminal-box {
-    flex: 1; /* ياخد مساحة مرنة */
-    max-width: 650px; /* تقليل العرض الأقصى شوية */
-    margin-top: 0; /* نشيل المارجن القديم */
+    flex: 1; 
+    max-width: 650px;
+    margin-top: 0; 
 }
 
-/* تنسيق عامود الصورة */
 .hero-photo-col {
-    flex: 0 0 auto; /* ميصغرش ولا يكبر يفضل ثابت */
+    flex: 0 0 auto; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* تنسيق الصورة الشخصية (زي الأول - مدورة) */
 .hero-photo-col img {
-    border-radius: 50%; /* مدورة */
+    border-radius: 50%;
     width: 320px;
     height: 320px;
-    object-fit: cover; /* عشان الصورة متتمطش */
+    object-fit: cover; 
     
-    /* لمسة High Contrast: إطار أبيض (أو أسود في اللايت مود) */
     border: 5px solid var(--text-color);
     
-    /* ظل خفيف حاد يليق بستايل الهكر */
     box-shadow: 10px 10px 0 rgba(128, 128, 128, 0.2);
     
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* تأثير حركة عند الوقوف على الصورة */
-/* تأثير Hover متناسق مع مود الموقع للهكر (النعناعي) */
+
 .hero-photo-col img:hover {
-    /* لغينا الـ rotate والـ transform عشان ميبقاش كرنج */
     transform: none; 
 
-    /* ضفنا تأثير إضاءة خارجية (Outglow) باللون النعناعي (Mint) */
-    /* مع لفة بسيطة على الصورة تدي إحساس ديجيتال */
-    border-color: #7AE2CF; /* اللون النعناعي */
+ 
+    border-color: #7AE2CF;
     box-shadow: 0 0 25px rgba(122, 226, 207, 0.8), 10px 10px 0 rgba(122, 226, 207, 0.3);
 }
 
-/* تأكد إن الـ Social links بتنزل تحت العمودين */
 .social-links {
     margin-top: 50px;
     width: 100%;
     text-align: center;
 }
 
-/* ==========================================
-   التجاوب مع الشاشات (Responsive)
-   ========================================== */
+
 @media (max-width: 992px) {
     .hero-container {
-        flex-direction: column-reverse; /* نقلب الترتيب على التابلت والموبايل */
+        flex-direction: column-reverse;
         gap: 30px;
     }
     
     .hero-photo-col img {
-        width: 250px; /* نصغر الصورة شوية على الشاشات الأصغر */
+        width: 250px;
         height: 250px;
     }
     
@@ -253,23 +226,19 @@ footer { padding: 20px; text-align: center; border-top: 2px solid var(--border-c
         width: 100%;
     }
 }
-/* ==========================================
-   الخلفية المتحركة (Neural Network)
-   ========================================== */
+
 #network-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* عشان يكون ورا كل حاجة في الموقع */
-    opacity: 0.4; /* شفافية خفيفة عشان ميزعجش العين عن القراءة */
-    pointer-events: none; /* عشان ميعطلش الضغط على الزراير */
+    z-index: -1;
+    opacity: 0.4; 
+    pointer-events: none;
 }
 
-/* ==========================================
-   تأثير التشويش (Glitch) على اللوجو
-   ========================================== */
+
 .logo {
     position: relative;
     display: inline-block;
@@ -277,7 +246,7 @@ footer { padding: 20px; text-align: center; border-top: 2px solid var(--border-c
 }
 
 .logo::before, .logo::after {
-    content: "HAZEM_SYS"; /* نفس الكلمة المكتوبة في اللوجو */
+    content: "HAZEM_SYS";
     position: absolute;
     top: 0;
     left: 0;
@@ -317,11 +286,9 @@ footer { padding: 20px; text-align: center; border-top: 2px solid var(--border-c
     80% { clip: rect(9px, 9999px, 33px, 0); }
     100% { clip: rect(55px, 9999px, 76px, 0); }
 }
-/* ==========================================
-   تنسيق شريط البيانات (Data Ticker)
-   ========================================== */
+
 .data-ticker {
-    margin-top: 60px; /* عشان ينزل تحت الهيدر الثابت */
+    margin-top: 60px;
     width: 100%;
     background: var(--text-color);
     color: var(--bg-color);
@@ -333,9 +300,6 @@ footer { padding: 20px; text-align: center; border-top: 2px solid var(--border-c
     text-transform: uppercase;
 }
 
-/* ==========================================
-   تنسيق سجلات النظام (System Logs)
-   ========================================== */
 .logs-box {
     max-width: 900px;
     width: 100%;
@@ -362,9 +326,9 @@ footer { padding: 20px; text-align: center; border-top: 2px solid var(--border-c
     color: #444;
 }
 
-.logs-body p:nth-child(1) code { color: #27c93f; } /* أخضر للنجاح */
-.logs-body p:nth-child(2) code { color: #ffbd2e; } /* أصفر للتحذيرات/المهام */
-.logs-body p:nth-child(3) code { color: #ff5f56; } /* أحمر للـ Reverse Engineering */
+.logs-body p:nth-child(1) code { color: #27c93f; } 
+.logs-body p:nth-child(2) code { color: #ffbd2e; }
+.logs-body p:nth-child(3) code { color: #ff5f56; }
 
 .blinking-log {
     border-bottom: none !important;
