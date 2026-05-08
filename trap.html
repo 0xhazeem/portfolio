@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRITICAL_SYSTEM_FAILURE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden; /* لمنع السكرول */
+        }
+        /* خدعة الـ Iframe عشان نملى الشاشة ونخفي زراير اليوتيوب */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; /* عشان نمنعه يوقف الفيديو أو يدوس على اليوتيوب */
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh; /* تكبير الفيديو عشان يخفي الحواف */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" 
+            allow="autoplay; fullscreen" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>

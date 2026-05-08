@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hazem@ai-engineer: ~$</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="network-canvas"></canvas>
+
+    <header>
+        <nav>
+            <div class="logo">HAZEM_SYS</div>
+            <ul class="nav-links">
+                <li><a href="#about">/about</a></li>
+                <li><a href="#skills">/skills</a></li>
+                <li><a href="#contact">/contact</a></li>
+                <li><button id="theme-toggle" class="theme-btn" title="Toggle Mode"><i class="fas fa-circle-half-stroke"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="data-ticker">
+        <marquee scrollamount="5" scrolldelay="50">
+            SYS_STATUS: ONLINE | MEM_USAGE: 42% | CPU_TEMP: 45C | LAST_LOGIN: 10:17 AM EEST | ACTIVE_PROCESSES: Python, C++, DaVinci Resolve | SECURITY_PROTOCOL: Bitwarden Enabled | NETWORK: SECURE
+        </marquee>
+    </div>  
+
+    <section id="about" class="section hero-wrapper">
+        <div class="hero-container">
+            
+            <div class="terminal-box fade-in">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="close"></span>
+                        <span class="minimize"></span>
+                        <span class="maximize"></span>
+                    </div>
+                    <div class="terminal-title">hazem@arch: ~</div>
+                </div>
+                <div class="terminal-body">
+                    <p class="command">> executing intro.sh...</p>
+                    <p class="output">Loading AI Models... [OK]</p>
+                    <p class="output">Compiling C++ Dependencies... [OK]</p>
+                    <br>
+                    <p><span class="prompt">hazem@arch:~$</span> <span id="typewriter"></span><span class="cursor">█</span></p>
+                </div>
+            </div>
+
+            <div class="hero-photo-col fade-in">
+                <img src="./pictures/image.jpg" alt="Hazem Profile">
+            </div>
+
+        </div>
+        
+        <div class="social-links fade-in">
+            <a href="https://github.com/0xhazeem" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            
+            <a href="https://www.youtube.com/@iiha.o" target="_blank" title="YouTube Channel" class="yt-link"><i class="fab fa-youtube"></i></a>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title fade-in">> _Skills & Tech Stack</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="card-header">python.py</div>
+                <div class="card-body">
+                    <p><code>import machine_learning</code></p>
+                    <p><code>from logic import algorithms</code></p>
+                    <br>
+                    <p>Focusing on clean, efficient scripting and data logic.</p>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <div class="card-header">main.cpp</div>
+                <div class="card-body">
+                    <p><code>#include &lt;iostream&gt;</code></p>
+                    <p><code>using namespace std;</code></p>
+                    <br>
+                    <p>Building strong foundations in memory management and OOP.</p>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="card-header">config.json</div>
+                <div class="card-body">
+                    <p><code>"editor": "VS Code",</code></p>
+                    <p><code>"interests": ["Cyberpunk 2077", "Elden Ring"]</code></p>
+                    <br>
+                    <p>Gaming, anime, and analyzing immersive digital worlds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="logs" class="section">
+        <h2 class="section-title fade-in">> _System_Logs</h2>
+        <div class="terminal-box logs-box fade-in">
+            <div class="terminal-header">
+                <div class="terminal-buttons"><span class="close"></span><span class="minimize"></span><span class="maximize"></span></div>
+                <div class="terminal-title">/var/log/syslog</div>
+            </div>
+            <div class="terminal-body logs-body">
+                <p><code>[10:17:55] INFO: Connecting to IEEE_NUB RESTART event protocols... Success.</code></p>
+                <p><code>[09:42:12] WARN: Analyzing hardware logic and circuit schematics via KiCAD.</code></p>
+                <p><code>[08:15:03] INFO: Booting IDA (Hex-Rays) environment for reverse engineering analysis.</code></p>
+                <p><code>[07:02:44] SYS: Syncing digital environment... Steam/GOG libraries verified.</code></p>
+                <p class="blinking-log"><code>> Awaiting next command...<span class="cursor">█</span></code></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title fade-in">> _Initiate_Connection</h2>
+        
+        <form action="https://formsubmit.co/justhazeem@gmail.com" method="POST" id="contactForm" class="fade-in terminal-form">
+            
+            <input type="hidden" name="_subject" value="New Mission Log from Portfolio!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+
+            <div class="input-group">
+                <label>Name:</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="input-group">
+                <label>Email:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label>Message:</label>
+                <textarea name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">[ SEND_DATA ]</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>SYSTEM.HALTED &copy; 2026 Hazem.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

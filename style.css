@@ -1,0 +1,373 @@
+/* High Contrast Theme Variables */
+:root {
+    --bg-color: #050505; /* أسود قاتم */
+    --text-color: #ffffff; /* أبيض ناصع */
+    --border-color: #333333;
+    --accent-color: #ffffff;
+    --card-bg: #0a0a0a;
+}
+
+/* Light Mode (Inverse High Contrast) */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #cccccc;
+    --accent-color: #000000;
+    --card-bg: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* خط الكود الأساسي */
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+    /* تأثير الشبكة (Grid) في الخلفية */
+    background-image: 
+        linear-gradient(rgba(128, 128, 128, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Header & Nav */
+header {
+    background: var(--bg-color);
+    border-bottom: 2px solid var(--border-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links a { color: var(--text-color); text-decoration: none; font-weight: bold; transition: 0.3s; }
+.nav-links a:hover { text-shadow: 0 0 8px var(--accent-color); }
+.theme-btn { background: transparent; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-color); }
+
+/* Sections */
+/* تقليل المساحات الفاضية بين الأقسام */
+.section {
+    padding: 80px 20px 40px; /* قللنا الـ padding اللي فوق واللي تحت */
+    min-height: auto; /* لغينا الـ 100vh عشان الأقسام تقرب من بعض */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-title { margin-bottom: 50px; font-size: 2.5rem; text-transform: uppercase; border-bottom: 2px solid var(--text-color); display: inline-block; padding-bottom: 5px; }
+
+/* Terminal Window (Hero) */
+.terminal-box {
+    width: 100%;
+    max-width: 800px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-top: 50px;
+}
+.terminal-header {
+    background: var(--border-color);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.terminal-buttons { display: flex; gap: 8px; margin-right: 15px; }
+/* مؤشر الماوس عشان الزرار الأحمر يبان إنه شغال */
+.close {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.close:hover {
+    transform: scale(1.2);
+}
+.terminal-buttons span { width: 12px; height: 12px; border-radius: 50%; }
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
+.terminal-title { color: var(--text-color); font-weight: bold; margin-left: auto; margin-right: auto; }
+.terminal-body { padding: 30px; text-align: left; font-size: 1.2rem; line-height: 1.8; }
+.command { color: #888; }
+.output { color: #aaa; }
+.prompt { color: #27c93f; font-weight: bold; margin-right: 10px; }
+.cursor { animation: blink 1s step-end infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Socials */
+.social-links {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* المقدار ده هيبعدهم عن بعض، تقدر تخليه 20px لو عايزهم أقرب شوية */
+}
+
+/* وتأكد إن الأيقونات نفسها متنسقة كده */
+.social-links a {
+    color: var(--text-color);
+    font-size: 3rem;
+    transition: 0.3s;
+}
+.social-links a:hover { text-shadow: 0 0 15px var(--accent-color); transform: scale(1.1); }
+/* تأثير إضاءة حمراء لأيقونة اليوتيوب عند الوقوف عليها */
+.yt-link:hover {
+    color: #ff0000 !important;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8) !important;
+}
+
+/* Cards */
+.projects-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 1000px; }
+.project-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    width: 300px;
+    transition: 0.3s;
+}
+.project-card:hover {
+    border-color: var(--text-color);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+.card-header { background: var(--border-color); padding: 5px 15px; font-weight: bold; border-bottom: 2px solid var(--border-color); }
+.card-body { padding: 20px; text-align: left; }
+.card-body code { display: block; margin-bottom: 10px; color: #aaa; }
+
+/* Form */
+.terminal-form { width: 100%; max-width: 600px; background: var(--card-bg); border: 2px solid var(--border-color); padding: 30px; }
+.input-group { margin-bottom: 20px; text-align: left; }
+.input-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+input, textarea { width: 100%; padding: 10px; background: transparent; border: 1px solid var(--border-color); color: var(--text-color); outline: none; }
+input:focus, textarea:focus { border-color: var(--text-color); }
+button[type="submit"] { background: transparent; color: var(--text-color); border: 2px solid var(--text-color); padding: 10px 20px; font-size: 1.2rem; cursor: pointer; transition: 0.3s; width: 100%; font-weight: bold; }
+button[type="submit"]:hover { background: var(--text-color); color: var(--bg-color); }
+
+footer { padding: 20px; text-align: center; border-top: 2px solid var(--border-color); margin-top: 50px; }
+
+/* Fade-in */
+.fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+.fade-in.appear { opacity: 1; transform: translateY(0); }
+
+/* ==========================================
+   تنسيق الـ Hero الجديد (العمودين)
+   ========================================== */
+
+/* الحاوية الأساسية للقسم */
+.hero-wrapper {
+    max-width: 1200px; /* عرض أكبر عشان العمودين */
+    margin: 0 auto;
+}
+
+/* حاوية العمودين (Terminal + Photo) */
+.hero-container {
+    display: flex;
+    flex-direction: row; /* عمودين جمب بعض في الشاشات الكبيرة */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* مسافة بين الـ Terminal والصورة */
+    width: 100%;
+    padding: 0 20px;
+    flex-wrap: wrap-reverse; /* على الموبايل: الصورة تطلع فوق والـ Terminal تحت */
+}
+
+/* تعديل الـ terminal-box عشان يظبط في العمود */
+.terminal-box {
+    flex: 1; /* ياخد مساحة مرنة */
+    max-width: 650px; /* تقليل العرض الأقصى شوية */
+    margin-top: 0; /* نشيل المارجن القديم */
+}
+
+/* تنسيق عامود الصورة */
+.hero-photo-col {
+    flex: 0 0 auto; /* ميصغرش ولا يكبر يفضل ثابت */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* تنسيق الصورة الشخصية (زي الأول - مدورة) */
+.hero-photo-col img {
+    border-radius: 50%; /* مدورة */
+    width: 320px;
+    height: 320px;
+    object-fit: cover; /* عشان الصورة متتمطش */
+    
+    /* لمسة High Contrast: إطار أبيض (أو أسود في اللايت مود) */
+    border: 5px solid var(--text-color);
+    
+    /* ظل خفيف حاد يليق بستايل الهكر */
+    box-shadow: 10px 10px 0 rgba(128, 128, 128, 0.2);
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تأثير حركة عند الوقوف على الصورة */
+/* تأثير Hover متناسق مع مود الموقع للهكر (النعناعي) */
+.hero-photo-col img:hover {
+    /* لغينا الـ rotate والـ transform عشان ميبقاش كرنج */
+    transform: none; 
+
+    /* ضفنا تأثير إضاءة خارجية (Outglow) باللون النعناعي (Mint) */
+    /* مع لفة بسيطة على الصورة تدي إحساس ديجيتال */
+    border-color: #7AE2CF; /* اللون النعناعي */
+    box-shadow: 0 0 25px rgba(122, 226, 207, 0.8), 10px 10px 0 rgba(122, 226, 207, 0.3);
+}
+
+/* تأكد إن الـ Social links بتنزل تحت العمودين */
+.social-links {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ==========================================
+   التجاوب مع الشاشات (Responsive)
+   ========================================== */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column-reverse; /* نقلب الترتيب على التابلت والموبايل */
+        gap: 30px;
+    }
+    
+    .hero-photo-col img {
+        width: 250px; /* نصغر الصورة شوية على الشاشات الأصغر */
+        height: 250px;
+    }
+    
+    .terminal-box {
+        width: 100%;
+    }
+}
+/* ==========================================
+   الخلفية المتحركة (Neural Network)
+   ========================================== */
+#network-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* عشان يكون ورا كل حاجة في الموقع */
+    opacity: 0.4; /* شفافية خفيفة عشان ميزعجش العين عن القراءة */
+    pointer-events: none; /* عشان ميعطلش الضغط على الزراير */
+}
+
+/* ==========================================
+   تأثير التشويش (Glitch) على اللوجو
+   ========================================== */
+.logo {
+    position: relative;
+    display: inline-block;
+    animation: glitch-skew 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite both alternate;
+}
+
+.logo::before, .logo::after {
+    content: "HAZEM_SYS"; /* نفس الكلمة المكتوبة في اللوجو */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+.logo::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff003c;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.logo::after {
+    left: -2px;
+    text-shadow: -1px 0 #00ffff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 31px, 0); }
+    20% { clip: rect(62px, 9999px, 14px, 0); }
+    40% { clip: rect(34px, 9999px, 88px, 0); }
+    60% { clip: rect(98px, 9999px, 52px, 0); }
+    80% { clip: rect(22px, 9999px, 73px, 0); }
+    100% { clip: rect(85px, 9999px, 20px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(12px, 9999px, 55px, 0); }
+    40% { clip: rect(86px, 9999px, 23px, 0); }
+    60% { clip: rect(43px, 9999px, 89px, 0); }
+    80% { clip: rect(9px, 9999px, 33px, 0); }
+    100% { clip: rect(55px, 9999px, 76px, 0); }
+}
+/* ==========================================
+   تنسيق شريط البيانات (Data Ticker)
+   ========================================== */
+.data-ticker {
+    margin-top: 60px; /* عشان ينزل تحت الهيدر الثابت */
+    width: 100%;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 5px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--border-color);
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   تنسيق سجلات النظام (System Logs)
+   ========================================== */
+.logs-box {
+    max-width: 900px;
+    width: 100%;
+    background: #020202;
+    border-color: #333;
+}
+
+[data-theme="light"] .logs-box {
+    background: #e8e8e8;
+}
+
+.logs-body p {
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 10px;
+}
+
+.logs-body p code {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+[data-theme="light"] .logs-body p code {
+    color: #444;
+}
+
+.logs-body p:nth-child(1) code { color: #27c93f; } /* أخضر للنجاح */
+.logs-body p:nth-child(2) code { color: #ffbd2e; } /* أصفر للتحذيرات/المهام */
+.logs-body p:nth-child(3) code { color: #ff5f56; } /* أحمر للـ Reverse Engineering */
+
+.blinking-log {
+    border-bottom: none !important;
+    margin-top: 20px;
+    color: var(--text-color) !important;
+}
